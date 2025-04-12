@@ -1,10 +1,13 @@
-*U ovom repozitorijumu zbirno za sve fajlove se nalazi 214 linija koda( calculator.java 188 i start.java 26).*
+**U ovom repozitorijumu zbirno za sve fajlove se nalazi 214 linija koda( calculator.java 188 i start.java 26).**
 
-#STATICKA ANALIZA KODA U OVOM REPOZITORIJUMU:#
 
-##U ovom repozitorijumu statickom analizom sam zapazio sljedece:##
 
-###File Clculator.java:###
+**STATICKA ANALIZA KODA U OVOM REPOZITORIJUMU:**
+
+
+U ovom repozitorijumu statickom analizom sam zapazio sljedece:
+
+**File Clculator.java:**
 
 1. Ln 4 - public constructor za klasu "Clculator" zamijeniti privatnim
 2. Ln 18 - metoda "ToString" bi trebalo po java standardima pisati pocetnim malim slovom, dakle trebalo bi pisati"toString"
@@ -17,7 +20,7 @@
 9. Ln 74 - preimenovati metodu "Calculate" da odgovara regularnom izrazu
 10. Ln 183 - "return" je ovde nepotreban pa bi ga trebalo ukloniti.
 
-###File Start.java:###
+**File Start.java:**
 
 1. Ln 6 - Prema java standardu lokalnu promjenjivu "Expression" bi trebalo pisat malim pocetnim slovom ("expression")
 2. Ln 8 i 19 - Zamijeniti "System.out" sa logger
