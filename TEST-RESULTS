@@ -41,3 +41,80 @@ UNOS                          REZULTAT                             OCEKIVANI REZ
 "5+3"                           "5+3"                                     8                    FAILED
 
 
+
+Takodje sam po zadatku iz assignmenta napravio jedinicni test CalculatorTest.java koji je nakon pokretanja ispisao da je test prosao(PASSED)
+Kod ovog jedinicnog testa dodao sam u fajl CalculatorTest.java na GitHub
+Ovo je kod jedinicnog testa:
+
+
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.jupiter.api.Test;
+
+public class CalculatorTest {
+
+    @Test
+    void testAddition() {
+        List<Float> numbers = new ArrayList<>(Arrays.asList(5f, 3f));
+        List<String> operations = new ArrayList<>(Arrays.asList("+"));
+
+        Calculator.Calculate(numbers, operations);
+        
+        assertEquals(8f, Calculator.finalResult, "Sabiranje treba vratiti 8");
+    }
+
+    @Test
+    void testSubtraction() {
+        List<Float> numbers = new ArrayList<>(Arrays.asList(10f, 4f));
+        List<String> operations = new ArrayList<>(Arrays.asList("-"));
+
+        Calculator.Calculate(numbers, operations);
+
+        assertEquals(6f, Calculator.finalResult, "Oduzimanje treba vratiti 6");
+    }
+
+    @Test
+    void testMultiplication() {
+        List<Float> numbers = new ArrayList<>(Arrays.asList(6f, 2f));
+        List<String> operations = new ArrayList<>(Arrays.asList("*"));
+
+        Calculator.Calculate(numbers, operations);
+        
+        assertEquals(12f, Calculator.finalResult, "Množenje treba vratiti 12");
+    }
+
+    @Test
+    void testDivision() {
+        List<Float> numbers = new ArrayList<>(Arrays.asList(8f, 2f));
+        List<String> operations = new ArrayList<>(Arrays.asList("/"));
+
+        Calculator.Calculate(numbers, operations);
+        
+        assertEquals(4f, Calculator.finalResult, "Dijeljenje treba vratiti 4");
+    }
+
+    @Test
+    void testOperatorPrecedence() {
+        List<Float> numbers = new ArrayList<>(Arrays.asList(10f, 2f, 3f));
+        List<String> operations = new ArrayList<>(Arrays.asList("*", "+"));
+
+        Calculator.Calculate(numbers, operations);
+        
+        assertEquals(23f, Calculator.finalResult, "Množenje treba imati prednost nad sabiranjem");
+    }
+
+    @Test
+    void testDivisionByZero() {
+        List<Float> numbers = new ArrayList<>(Arrays.asList(5f, 0f));
+        List<String> operations = new ArrayList<>(Arrays.asList("/"));
+
+        Calculator.Calculate(numbers, operations);
+        
+        assertTrue(Float.isInfinite(Calculator.finalResult), "Dijeljenje s nulom treba vratiti beskonačnost");
+    }
+}
+
+
+
